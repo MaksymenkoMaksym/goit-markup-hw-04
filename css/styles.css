@@ -46,7 +46,17 @@ h1,h2,h3,h4,h5,h6,p {
     margin-right: auto;
 }
 .hidden-element{
-    display: none;
+    position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+    
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
 }
 .centre{
     text-align: center;
@@ -248,6 +258,8 @@ color: var(--title-text-color);
     justify-content: center;
     height: 120px;
     margin-bottom: 30px;
+    
+     border-radius: 4px;
 
     background-color: var(--background-color-gray);
 }
@@ -398,17 +410,24 @@ justify-content: center;
     fill: #afb1b8;
 }
 
-.clients-item .link:hover .icon{
+.clients-item .link:hover .icon,
+.clients-item .link:focus .icon{
     fill:var(--accent-color);
+    
 }
+.clients-item .link:hover,
+.clients-item .link:focus{
+border-color: var(--accent-color);
 
+outline: none;
+}
 
 /*--/ Clients */
 
 /* Footer */
 .bottom .flex-container{
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .bottom {
